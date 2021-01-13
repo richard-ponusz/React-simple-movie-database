@@ -1,7 +1,10 @@
 import axios from 'axios';
+import config from '../../config';
 
-const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlODU3OWQ1YTE2OTEwOTRmNDUxMzhiMWJiMGJkYmVhNiIsInN1YiI6IjVlY2I3NDJiOGUyZTAwMDAyMDI3NTVhZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zU3UMOfwGYqImQ3D1uqd1g-bwyg1bgI-mr-dTHkv3nM'
+/** Use your API key here, More about this: in the Readme.md*/
+const accessToken = config.ACCESS_TOKEN;
 
+/** The MovieDB's newest version of Authorization */
 const API = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
   headers: {
