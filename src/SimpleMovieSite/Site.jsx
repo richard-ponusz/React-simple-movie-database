@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
-import MainHeader from './MainHeader';
-import MainFooter from './MainFooter';
-import Movies from './movies/Movies';
+import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+
+import MainHeader from './components/MainHeader';
+import MainFooter from './components/MainFooter';
+import Movies from './components/Movies';
+
+const Container = styled.div`
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  height: 100vh;
+`
 
 const Site = () => {
   const [movies, setMovies] = useState([]);
 
+  useEffect(() => {
+    console.log('in Site: ', movies);
+  }, [movies]);
+
   return (
-    <div>
+    <Container>
       <MainHeader setMovies={setMovies} />
       <Movies movies={movies} />
       <MainFooter />
-    </div>
+    </Container>
   )
 }
 

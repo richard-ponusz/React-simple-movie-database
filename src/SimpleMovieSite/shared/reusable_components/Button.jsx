@@ -7,13 +7,13 @@ const STYLES = [
   "success",
 ];
 
-const Button = ({ label = 'Button', handleClick, variant, disabled = false }) => {
+const Button = ({ label = 'Button', onClick, variant, disabled = false }) => {
   const checkButtonStyle = STYLES.includes(variant) ? variant : STYLES[0];
 
   return (
     <button
       className={`btn btn__${checkButtonStyle}`}
-      onClick={handleClick}
+      onClick={onClick}
       disabled={disabled}
     >
       {label}
