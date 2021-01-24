@@ -5,7 +5,15 @@ import styled from '@emotion/styled/macro';
 import RenderMovie from './movies/RenderMovie';
 
 const Container = styled.div`
-  background-color: blue;
+  background-color: #ecf0f1;
+  padding: 1rem;
+`
+
+const MoviesList = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 2rem;
 `
 
 const Movies = ({ movies }) => {
@@ -14,13 +22,16 @@ const Movies = ({ movies }) => {
     if (!movies) {
       return;
     }
-    return movies.map(movie => <RenderMovie movie={movie} />)
+    console.log(movies);
+    return movies.map(movie => <RenderMovie movie={movie} key={movie.id} />)
   }
 
   return (
     <Container>
-      <h1>Movies:</h1>
-      {renderMovies()}
+      {movies ? null : 'No movies searched for as of yet! Find the movie you are looking for!'}
+      <MoviesList>
+        {renderMovies()}
+      </MoviesList>
     </Container>
   )
 }

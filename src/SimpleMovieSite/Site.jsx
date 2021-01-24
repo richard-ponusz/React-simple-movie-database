@@ -10,7 +10,9 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
+  row-gap: 10px;
   height: 100vh;
+
 `
 
 const Site = () => {

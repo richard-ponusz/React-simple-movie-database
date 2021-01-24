@@ -1,13 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
-
-import requestSearchedMovies from '../service/service';
+import Input from '../shared/reusable_components/Input';
 import Button from '../shared/reusable_components/Button';
 
+import requestSearchedMovies from '../service/service';
+
 const Container = styled.div`
-  backgroundColor: red;
-  margin: 2rem auto;
+  height: 20rem;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+   ), 
+   url('https://bgr.com/wp-content/uploads/2016/03/movies-tiles.jpg');
+`
+
+const Form = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Header = ({ setMovies }) => {
@@ -19,44 +31,38 @@ const Header = ({ setMovies }) => {
    * @param {*} searchedMovie 
    */
   const handleServiceCall = async (searchedMovie) => {
+    handleResetSearch();
     const foundMovies = await requestSearchedMovies(searchedMovie);
-    console.log('in Header: ', foundMovies);
     setMovies(foundMovies);
-  }
-
-  /**
-   * Handles movie search input field changes
-   * 
-   * @param {string} searchedText The search input field's value
-   */
-  const handleSearchInputChanges = (searchedText) => {
-    setSearchedMovie(searchedText)
   }
 
   /**
    * Resets the searched movie
    */
   const handleResetSearch = () => {
-    setSearchedMovie('');
+    setMovies('');
   }
 
   return (
     <Container>
-      <input
-        type="text"
-        name="search-movies__input"
-        value={searchedMovie}
-        onChange={(e) => setSearchedMovie(e.target.value)}
-      />
-      <Button
-        label="Search Movie"
-        variant="primary"
-        onClick={() => handleServiceCall(searchedMovie)}
-      />
-      <Button
-        label="Reset"
-        onClick={handleResetSearch}
-      />
+      <Form>
+        <Input
+          type="text"
+          name="search-movies__input"
+          value={searchedMovie}
+          onChange={(e) => setSearchedMovie(e.target.value)}
+        />
+        <Button
+          label="Search Movie"
+          variant="primary"
+          onClick={() => handleServiceCall(searchedMovie)}
+        />
+        <Button
+          label="Reset"
+          onClick={handleResetSearch}
+          variant="warning"
+        />
+      </Form>
     </Container>
   )
 }

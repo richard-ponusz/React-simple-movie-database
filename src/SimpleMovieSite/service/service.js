@@ -10,7 +10,6 @@ const requestSearchedMovies = (searchedMovie) => {
   return API.get(`/search/movie`, {
     params: {
       query: searchedMovie,
-      include_adult: true,
     }
   })
     .then(({ data }) => {

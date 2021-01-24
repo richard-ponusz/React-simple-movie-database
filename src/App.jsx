@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { Global, css } from '@emotion/react';
 
 import Site from './SimpleMovieSite/Site';
@@ -16,6 +15,7 @@ function App() {
           margin: 0;
           padding: 0;
           background: #fff;
+          font-family: 'Roboto', sans-serif;
         }
 
         body {
