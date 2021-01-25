@@ -18,7 +18,7 @@ const ButtonStyle = styled.button`
       case 'success':
         return '#fff'
       case 'warning':
-        return 'black'
+        return '#fff'
       case 'danger':
         return '#fff'
       case 'dark':
@@ -30,11 +30,11 @@ const ButtonStyle = styled.button`
   background-color: ${props => {
     switch (props.variant) {
       case 'primary':
-        return '#00BEFE'
+        return '#337ab7'
       case 'success':
         return '#40B640'
       case 'warning':
-        return '#FFFF41'
+        return '#f0ad4e'
       case 'danger':
         return '#D93636'
       case 'dark':
@@ -48,11 +48,11 @@ const ButtonStyle = styled.button`
     background-color: ${props => {
     switch (props.variant) {
       case 'primary':
-        return '00688B'
+        return '#286090'
       case 'success':
         return '#215E21'
       case 'warning':
-        return '#EEEE00'
+        return '#ec971f'
       case 'danger':
         return '#8B1A1A'
       case 'dark':
