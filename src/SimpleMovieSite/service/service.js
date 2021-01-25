@@ -6,7 +6,7 @@ import API from './api';
  * @param {string} searchedMovie, the searched Movie title
  * @returns {[movies]} returns an array of found movies
  */
-const requestSearchedMovies = (searchedMovie) => {
+export const getSearchedMovies = (searchedMovie) => {
   return API.get(`/search/movie`, {
     params: {
       query: searchedMovie,
@@ -19,4 +19,3 @@ const requestSearchedMovies = (searchedMovie) => {
     });
 };
 
-export default requestSearchedMovies;

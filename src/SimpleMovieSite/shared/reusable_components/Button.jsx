@@ -18,29 +18,29 @@ const ButtonStyle = styled.button`
       case 'success':
         return '#fff'
       case 'warning':
-        return '#fff'
+        return 'black'
       case 'danger':
         return '#fff'
-      case 'white':
-        return 'black'
       case 'dark':
         return '#fff'
+      default:
+        return 'black'
     }
   }};
   background-color: ${props => {
     switch (props.variant) {
       case 'primary':
-        return '#3498db'
+        return '#00BEFE'
       case 'success':
-        return '#27ae60'
+        return '#40B640'
       case 'warning':
-        return '#f1c40f'
+        return '#FFFF41'
       case 'danger':
-        return '#e74c3c'
-      case 'white':
-        return '#fff'
+        return '#D93636'
       case 'dark':
         return '#2c3e50'
+      default:
+        return '#fff'
     }
   }};
   &:hover {
@@ -48,17 +48,17 @@ const ButtonStyle = styled.button`
     background-color: ${props => {
     switch (props.variant) {
       case 'primary':
-        return 'darkblue'
+        return '00688B'
       case 'success':
-        return '#27ae60'
+        return '#215E21'
       case 'warning':
-        return '#f1c40f'
+        return '#EEEE00'
       case 'danger':
-        return '#e74c3c'
-      case 'white':
-        return '#fff'
+        return '#8B1A1A'
       case 'dark':
         return '#2c3e50'
+      default:
+        return '#fff'
     }
   }};
   }

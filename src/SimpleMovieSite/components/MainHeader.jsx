@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import Input from '../shared/reusable_components/Input';
 import Button from '../shared/reusable_components/Button';
 
-import requestSearchedMovies from '../service/service';
+import { getSearchedMovies } from '../service/service';
 
 const Container = styled.div`
   height: 20rem;
@@ -32,7 +32,7 @@ const Header = ({ setMovies }) => {
    */
   const handleServiceCall = async (searchedMovie) => {
     handleResetSearch();
-    const foundMovies = await requestSearchedMovies(searchedMovie);
+    const foundMovies = await getSearchedMovies(searchedMovie);
     setMovies(foundMovies);
   }
 

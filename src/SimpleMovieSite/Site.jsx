@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 
+import API from './service/api';
 import MainHeader from './components/MainHeader';
 import MainFooter from './components/MainFooter';
 import Movies from './components/Movies';
@@ -12,15 +13,21 @@ const Container = styled.div`
   grid-template-columns: 100%;
   row-gap: 10px;
   height: 100vh;
-
 `
 
 const Site = () => {
   const [movies, setMovies] = useState([]);
 
+  const fetchtPopularMovies = async () => {
+    const movies = await API.get('/movie/popular').then(
+      ({ data }) => data.results
+    ).catch(error => console.log(error));
+    setMovies(movies);
+  }
+
   useEffect(() => {
-    console.log('in Site: ', movies);
-  }, [movies]);
+    fetchtPopularMovies();
+  }, []);
 
   return (
     <Container>
