@@ -6,6 +6,9 @@ import MovieType from '../../types/MovieType'
 const Movie = styled.div`
   display: block;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
 `
 
 const Poster = styled.img`
@@ -14,7 +17,8 @@ const Poster = styled.img`
 `
 
 const Title = styled.p`
-text-align: center;
+  width: 100%;
+  text-align: center;
   color: #8e44ad;
 `
 
