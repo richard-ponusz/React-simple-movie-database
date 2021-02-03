@@ -1,7 +1,6 @@
-import React from 'react';
-
 import MoviesType from '../types/MovieType';
 import styled from '@emotion/styled/macro';
+
 import RenderMovie from './movies/RenderMovie';
 
 const Container = styled.div`
@@ -22,7 +21,6 @@ const Movies = ({ movies }) => {
     if (!movies) {
       return;
     }
-    console.log(movies);
     return movies.map(movie => <RenderMovie movie={movie} key={movie.id} />)
   }
 

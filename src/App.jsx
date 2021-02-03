@@ -1,8 +1,6 @@
-import React from 'react';
 import { Global, css } from '@emotion/react';
 
 import Site from './SimpleMovieSite/Site';
-
 
 function App() {
   return (
@@ -14,7 +12,7 @@ function App() {
           width: 100%;
           margin: 0;
           padding: 0;
-          background: #fff;
+          background: url('https://i.pinimg.com/originals/ad/47/af/ad47af29ad50df1477b9413f9d521db0.jpg');
           font-family: 'Roboto', sans-serif;
         }
 

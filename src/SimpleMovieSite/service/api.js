@@ -1,8 +1,8 @@
 import axios from 'axios';
-import config from '../../config';
+import APIBearerKey from '../../config/APIconfig';
 
 /** Use your API key here, More about this: in the Readme.md*/
-const accessToken = config.ACCESS_TOKEN;
+const accessToken = APIBearerKey;
 
 /**
  * Connects to the Movie DB 

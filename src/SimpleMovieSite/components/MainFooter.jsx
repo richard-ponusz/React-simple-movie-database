@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
@@ -12,13 +11,10 @@ const Container = styled.div`
   border-top-right-radius: 0.2rem;
 `
 
-const Footer = () => {
-  return (
-    <Container>
-      <span>** This is the footer text **</span>
-    </Container>
-  )
+const MainFooter = () => (
+  <Container>
+    <span>** This is the footer text **</span>
+  </Container>
+)
 
-}
-
-export default Footer;
+export default MainFooter;

@@ -19,3 +19,12 @@ export const getSearchedMovies = (searchedMovie) => {
     });
 };
 
+/**
+ * Fetches the popular movies
+ */
+export const fetchPopularMovies = async () => {
+  return await API.get('/movie/popular').then(
+    ({ data }) => data.results
+  ).catch(error => console.log(error));
+}
+

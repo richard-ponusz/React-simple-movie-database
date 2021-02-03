@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 
 import Input from '../shared/reusable_components/Input';
 import Button from '../shared/reusable_components/Button';
 
-import { getSearchedMovies } from '../service/service';
+import { getSearchedMovies, fetchPopularMovies } from '../service/service';
 
 const Container = styled.div`
   height: 20rem;
@@ -22,7 +22,7 @@ const Form = styled.div`
   align-items: center;
 `
 
-const Header = ({ setMovies }) => {
+const MainHeader = ({ setMovies }) => {
   const [searchedMovie, setSearchedMovie] = useState('');
 
   /**a
@@ -36,12 +36,20 @@ const Header = ({ setMovies }) => {
     setMovies(foundMovies);
   }
 
+  const handleKeyPress = (keyEvent) => {
+
+    if (keyEvent.key === "Enter") {
+      handleServiceCall(searchedMovie)
+    }
+  }
+
   /**
    * Resets the searched movie
    */
   const handleResetSearch = () => {
     setMovies('');
   }
+
 
   return (
     <Container>
@@ -51,20 +59,11 @@ const Header = ({ setMovies }) => {
           name="search-movies__input"
           value={searchedMovie}
           onChange={(e) => setSearchedMovie(e.target.value)}
-        />
-        <Button
-          label="Search Movie"
-          variant="primary"
-          onClick={() => handleServiceCall(searchedMovie)}
-        />
-        <Button
-          label="Reset"
-          onClick={handleResetSearch}
-          variant="warning"
+          onKeyPress={handleKeyPress}
         />
       </Form>
     </Container>
   )
 }
 
-export default Header;
+export default MainHeader;

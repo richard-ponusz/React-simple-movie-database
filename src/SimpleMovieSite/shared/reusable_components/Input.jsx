@@ -9,12 +9,13 @@ const InputField = styled.input`
   box-shadow: none;
 `
 
-const Input = ({ value, onChange }) => {
+const Input = ({ value, onChange, onKeyPress }) => {
   return (
     <InputField
       placeholder="Type here to search for movies..."
       value={value}
       onChange={onChange}
+      onKeyPress={onKeyPress}
     />
   )
 }

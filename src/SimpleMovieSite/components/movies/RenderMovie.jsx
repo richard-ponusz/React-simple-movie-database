@@ -1,10 +1,8 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
 import MovieType from '../../types/MovieType'
 
 const Movie = styled.div`
-  display: block;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -19,7 +17,7 @@ const Poster = styled.img`
 const Title = styled.p`
   width: 100%;
   text-align: center;
-  color: #8e44ad;
+  color: #2c3e50;
 `
 
 const RenderMovies = ({ movie }) => {
