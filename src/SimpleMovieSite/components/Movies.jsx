@@ -12,7 +12,7 @@ const MoviesList = styled.div`
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 `
 
 const Movies = ({ movies }) => {
