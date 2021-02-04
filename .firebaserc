@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "simple-movie-database"
+    "default": "simple-movie-database",
+    "staging": "simple-movie-database",
+    "production": "simple-movie-database"
   }
 }

@@ -2,9 +2,8 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 
 import Input from '../shared/reusable_components/Input';
-import Button from '../shared/reusable_components/Button';
 
-import { getSearchedMovies, fetchPopularMovies } from '../service/service';
+import { getSearchedMovies } from '../service/service';
 
 const Container = styled.div`
   height: 20rem;

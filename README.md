@@ -6,6 +6,9 @@ IMPORTANT: This app is under construction so probably won't work as of yet!
 
 This is just a practice playground repository to have fun with.
 
+**Deployment Link**
+https://simple-movie-database.firebaseapp.com/
+
 ## How to make it work?
 
 1. Create an account on: https://www.themoviedb.org/
