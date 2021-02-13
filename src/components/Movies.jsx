@@ -1,4 +1,3 @@
-import MoviesType from '../types/MovieType';
 import styled from '@emotion/styled/macro';
 
 import RenderMovie from './movies/RenderMovie';
@@ -32,10 +31,6 @@ const Movies = ({ movies }) => {
       </MoviesList>
     </Container>
   )
-}
-
-Movies.propTypes = {
-  movies: MoviesType,
 }
 
 export default Movies;

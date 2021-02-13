@@ -1,5 +1,5 @@
 import axios from 'axios';
-import APIBearerKey from '../../config/APIconfig';
+import APIBearerKey from '../config/APIconfig';
 
 /** Use your API key here, More about this: in the Readme.md*/
 const accessToken = APIBearerKey;

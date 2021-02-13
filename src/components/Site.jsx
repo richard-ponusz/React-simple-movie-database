@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 
-import { fetchPopularMovies } from './service/service';
-import MainHeader from './components/MainHeader';
-import MainFooter from './components/MainFooter';
-import Movies from './components/Movies';
+import { fetchPopularMovies } from '../service/service';
+import MainHeader from './MainHeader';
+import MainFooter from './MainFooter';
+import Movies from './Movies';
 
 const Container = styled.div`
   min-height: 100%;

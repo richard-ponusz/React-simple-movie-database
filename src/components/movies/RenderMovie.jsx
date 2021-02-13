@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-import MovieType from '../../types/MovieType'
 
 const Movie = styled.div`
   margin: 0 auto;
@@ -27,10 +26,6 @@ const RenderMovies = ({ movie }) => {
       <Title>{movie.title}</Title>
     </Movie>
   )
-}
-
-RenderMovies.propTypes = {
-  movie: MovieType,
 }
 
 export default RenderMovies;
