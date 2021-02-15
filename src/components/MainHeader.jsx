@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
 
+import { getSearchedMovies } from '../service/service';
 import Input from '../shared/reusable_components/Input';
 
-import { getSearchedMovies } from '../service/service';
+import HeaderToolbar from "./movies/HeaderToolbar";
 
 const Container = styled.div`
   height: 20rem;
@@ -12,6 +13,13 @@ const Container = styled.div`
     rgba(0, 0, 0, 0.7)
    ), 
    url('https://bgr.com/wp-content/uploads/2016/03/movies-tiles.jpg');
+`
+
+const Toolbar = styled.div`
+  color: red;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 `
 
 const Form = styled.div`
@@ -52,6 +60,9 @@ const MainHeader = ({ setMovies }) => {
 
   return (
     <Container>
+      <Toolbar>
+        <HeaderToolbar />
+      </Toolbar>
       <Form>
         <Input
           type="text"

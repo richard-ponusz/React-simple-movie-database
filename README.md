@@ -13,8 +13,8 @@ https://simple-movie-database.firebaseapp.com/
 
 1. Create an account on: https://www.themoviedb.org/
 2. When you have an account, go to: https://www.themoviedb.org/settings/api
-3. Here find and copy the 'API Read Access Token (v4 auth)' key
-4. in the src/SimpleMovieSite/service/api.js set the accessToken to this code.
+3. Here find and copy the 'AxiosConfig Read Access Token (v4 auth)' key
+4. in the src/SimpleMovieSite/service/axiosConfig.js set the accessToken to this code.
 5. All done, now it should work fine!
 
 ## Used technologies
