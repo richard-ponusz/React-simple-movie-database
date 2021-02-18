@@ -1,6 +1,6 @@
 import { Global, css } from '@emotion/react';
 
-import Site from './SimpleMovieSite/Site';
+import Site from './components/Site';
 
 function App() {
   return (

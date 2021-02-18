@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import Input from '../shared/reusable_components/Input';
 
-import { getSearchedMovies } from '../service/service';
+import { getSearchedMovies } from '../service/axiosCalls';
 
 const Container = styled.div`
   height: 20rem;
@@ -21,10 +21,8 @@ const Form = styled.div`
   align-items: center;
 `
 
-const MainHeader = ({ setMovies }) => {
-  const [searchedMovie, setSearchedMovie] = useState('');
-
-  /**a
+const MainHeader = ({ searchedMovie, setSearchedMovie, setMovies }) => {
+  /**
    * Calls the function the handles the async call for search movies
    * 
    * @param {*} searchedMovie 
@@ -36,9 +34,8 @@ const MainHeader = ({ setMovies }) => {
   }
 
   const handleKeyPress = (keyEvent) => {
-
     if (keyEvent.key === "Enter") {
-      handleServiceCall(searchedMovie)
+      handleServiceCall(searchedMovie);
     }
   }
 

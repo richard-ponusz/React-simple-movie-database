@@ -1,7 +1,8 @@
-import MoviesType from '../types/MovieType';
+import MoviesType from './types/MovieType';
 import styled from '@emotion/styled/macro';
 
 import RenderMovie from './movies/RenderMovie';
+import MoviesPagination from "./movies/MoviesPagination";
 
 const Container = styled.div`
   background-color: #ecf0f1;
@@ -15,7 +16,7 @@ const MoviesList = styled.div`
   grid-gap: 1rem;
 `
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, setMovies, searchedMovie}) => {
 
   const renderMovies = () => {
     if (!movies) {
@@ -30,6 +31,7 @@ const Movies = ({ movies }) => {
       <MoviesList>
         {renderMovies()}
       </MoviesList>
+      <MoviesPagination movies={movies} setMovies={setMovies} searchedMovie={searchedMovie} />
     </Container>
   )
 }
