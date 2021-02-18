@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 
-import { fetchPopularMovies } from './service/service';
-import MainHeader from './components/MainHeader';
-import MainFooter from './components/MainFooter';
-import Movies from './components/Movies';
+import { fetchPopularMovies } from '../service/axiosCalls';
+import MainHeader from './MainHeader';
+import MainFooter from './MainFooter';
+import Movies from './Movies';
 
 const Container = styled.div`
   min-height: 100%;
@@ -17,6 +17,7 @@ const Container = styled.div`
 
 const Site = () => {
   const [movies, setMovies] = useState([]);
+  const [searchedMovie, setSearchedMovie] = useState('');
 
   const handleGetPopularMoviesCall = async () => {
     return await fetchPopularMovies();
@@ -31,8 +32,8 @@ const Site = () => {
 
   return (
     <Container>
-      <MainHeader setMovies={setMovies} />
-      <Movies movies={movies} />
+      <MainHeader searchedMovie={searchedMovie} setSearchedMovie={setSearchedMovie} setMovies={setMovies} />
+      <Movies movies={movies} setMovies={setMovies} searchedMovie={searchedMovie} />
       <MainFooter />
     </Container>
   );

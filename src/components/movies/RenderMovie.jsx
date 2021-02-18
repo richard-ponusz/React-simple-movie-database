@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import MovieType from '../../types/MovieType'
+import MovieType from '../types/MovieType'
 
 const Movie = styled.div`
   margin: 0 auto;

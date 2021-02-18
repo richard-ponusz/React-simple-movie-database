@@ -1,15 +1,16 @@
-import API from './api';
+import AxiosAPI from './axios';
 
 /**
- * Handles API call to the MovieDB with the searched movie's title
+ * Handles Axios call to the MovieDB with the searched movie's title
  * 
  * @param {string} searchedMovie, the searched Movie title
  * @returns {[movies]} returns an array of found movies
  */
-export const getSearchedMovies = (searchedMovie) => {
-  return API.get(`/search/movie`, {
+export const getSearchedMovies = (searchedMovie, selectedPage = 1) => {
+  return AxiosAPI.get(`/search/movie`, {
     params: {
       query: searchedMovie,
+      page: selectedPage
     }
   })
     .then(({ data }) => {
@@ -23,7 +24,7 @@ export const getSearchedMovies = (searchedMovie) => {
  * Fetches the popular movies
  */
 export const fetchPopularMovies = async () => {
-  return await API.get('/movie/popular').then(
+  return await AxiosAPI.get('/movie/popular').then(
     ({ data }) => data.results
   ).catch(error => console.log(error));
 }
