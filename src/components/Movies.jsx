@@ -1,4 +1,4 @@
-import MoviesType from './types/MovieType';
+import MoviesType from '../types/MovieType';
 import styled from '@emotion/styled/macro';
 
 import RenderMovie from './movies/RenderMovie';
